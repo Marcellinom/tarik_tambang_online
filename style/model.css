@@ -1,0 +1,28 @@
+.tali {
+    background: #000;
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275);
+    top: 50%;
+    left: 50%;
+}
+.input {
+    text-align:center;
+}
+.input-btn {
+    display: block;
+    margin:auto;
+    width: 98%;
+    border: none;
+    border-radius:5px;
+    background-color: #04AA6D;
+    padding: 14px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    position: fixed;
+    bottom: 10px;
+    right: 10px; 
+}

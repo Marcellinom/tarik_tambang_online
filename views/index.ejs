@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery/jquery.js"></script>
+    <script src="socket.io/socket.io.js"></script>
+    <link rel="stylesheet" href="style/model.css">
+    <title>Tarik Tambang</title>
+    <script>
+        $(document).ready(function(){
+            var socket = io();
+            $(".input-btn").on("click", function() {
+                socket.emit('tarik')
+            });
+            socket.on('right', () => Mright());
+            socket.on('left', () => Mleft());
+        });
+        function Mleft(offset = 10)
+        {
+            const tali = document.getElementById('tali');
+            tali.style.left = `${tali.offsetLeft - offset}px`;
+        }
+        function Mright(offset = 10)
+        {
+            const tali = document.getElementById('tali');
+            tali.style.left = `${tali.offsetLeft + offset}px`;
+        }
+    </script>
+</head>
+<body>
+    <div class="input">
+        <button class="input-btn">Tarik!</button>
+    </div>
+    <div id="tali" class="tali"></div>
+</body>
+</html>
